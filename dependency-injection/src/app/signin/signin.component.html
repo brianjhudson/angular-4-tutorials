@@ -1,0 +1,7 @@
+<form [formGroup]="form"
+(ngSubmit)="onSubmit(form.value)"
+>
+  <label for="username">Username: </label>
+  <input id="username" type="text" name="username" placeholder="Enter a username" [formControl]="form.controls['username']">
+  <div *ngIf="form.controls['username'].dirty && !form.controls['username'].valid" class="error">Please enter a username.</div>
+</form>
